@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thulir Greens: Wheat, Ragi, Horsegram &amp; Green Gram Microgreen Recipes</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f1f6ea;--ink:#1b2a18;--muted:#525f4c;--card:#fbfdf7;--line:#d3dfc7;--accent:#2f6b2f;
+  --wheat:#7d8f12;--ragi:#8e3b3b;--horse:#82552d;--green:#27965a;
+  --head:"Bricolage Grotesque",system-ui,sans-serif;--body:"Literata",Georgia,serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121a10;--ink:#e8f0e0;--muted:#a3b09b;--card:#1a2517;--line:#2e3d29;--accent:#7fcf7f;
+  --wheat:#b5c94a;--ragi:#e58a8a;--horse:#d9a56b;--green:#5fd596;color-scheme:dark;}}
+:root[data-theme="dark"]{--bg:#121a10;--ink:#e8f0e0;--muted:#a3b09b;--card:#1a2517;--line:#2e3d29;--accent:#7fcf7f;
+  --wheat:#b5c94a;--ragi:#e58a8a;--horse:#d9a56b;--green:#5fd596;color-scheme:dark;}
+html{height:auto;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--body)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{padding:56px 0 28px}
+h1{font:800 clamp(2.4rem,7vw,4.6rem)/0.98 var(--head);letter-spacing:-.03em;margin:0 0 18px;max-width:14ch}
+.brand{font:800 1.5rem var(--head);letter-spacing:-.01em;color:var(--accent);margin:0 0 14px}
+.lede{max-width:56ch;color:var(--muted);margin:0 0 28px}
+.tray{display:flex;gap:10px;align-items:flex-end;height:64px;margin-bottom:8px}
+.sprout{width:14px;border-radius:7px 7px 2px 2px;transform-origin:bottom;animation:grow 1.2s ease-out both}
+@keyframes grow{from{transform:scaleY(.1)}to{transform:scaleY(1)}}
+@media (prefers-reduced-motion:reduce){.sprout{animation:none}}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:10px 0;z-index:5}
+nav button{font:500 .95rem var(--head);padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.profile{border-left:6px solid var(--c);padding:6px 0 6px 18px;margin:22px 0 26px;display:none}
+.profile.on{display:block}
+.profile h2{font:800 1.7rem var(--head);margin:0 0 4px;color:var(--c)}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:.92rem;color:var(--muted);margin:8px 0 0;padding:0;list-style:none}
+.facts b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;padding-bottom:40px}
+.card{background:var(--card);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:10px;padding:18px 20px}
+.card h3{font:800 1.2rem/1.25 var(--head);margin:0 0 4px}
+.meta{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+.card p{margin:0 0 10px}
+details summary{cursor:pointer;font:500 .95rem var(--head);color:var(--c);padding:4px 0}
+details ul,details ol{padding-left:20px;margin:8px 0}
+details li{margin-bottom:5px;font-size:.96rem}
+.tip{font-size:.9rem;background:var(--bg);border-radius:8px;padding:9px 12px;margin-top:8px}
+.contact{background:var(--accent);color:var(--bg);border-radius:12px;padding:26px 28px;margin:10px 0 40px}
+.contact h2{font:800 1.5rem var(--head);margin:0 0 6px}
+.contact p{margin:0 0 14px;max-width:52ch}
+.contact a{display:inline-block;font:800 1.5rem var(--head);color:var(--bg);text-decoration:none;border:2px solid var(--bg);border-radius:999px;padding:8px 22px}
+.contact a:focus-visible{outline:3px solid var(--bg);outline-offset:3px}
+.rules{border-top:1px solid var(--line);padding:34px 0 60px}
+.rules h2{font:800 1.6rem var(--head);margin:0 0 14px}
+.rules ul{padding-left:20px;max-width:64ch}
+.rules li{margin-bottom:8px}
+footer{font-size:.85rem;color:var(--muted);padding-bottom:40px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="tray" aria-hidden="true" id="tray"></div>
+  <div class="brand">Thulir Greens</div>
+  <h1>Microgreens in everyday food</h1>
+  <p class="lede">Twelve simple recipes that use fresh wheat, ragi, horsegram (kollu) and green gram (pasi payir) microgreens, from dosa and rasam to smoothies and wheat juice. Grown on a tray in a week, ready to go into your next meal.</p>
+  <nav id="nav" aria-label="Choose a microgreen"></nav>
+</header>
+<main id="main"></main>
+
+<section class="rules">
+  <h2>Using microgreens well</h2>
+  <ul>
+    <li>Cut just above the soil line on harvest day and rinse in cold water. Cutting fresh gives the best taste and crunch.</li>
+    <li>Add them at the end. Heat for under a minute keeps the colour and bite; long cooking turns them limp and bitter.</li>
+    <li>Wheat greens are fibrous. Chop them fine or blend them rather than eating them in big pieces.</li>
+    <li>Store unwashed in a box lined with a paper towel in the fridge, and use within 3 to 4 days.</li>
+    <li>Cut only the shoots, never the seeds or roots. Anyone with a health condition or on medication should check with a doctor before making them a daily habit.</li>
+  </ul>
+</section>
+<section class="contact" id="contact">
+  <h2>Get fresh microgreens</h2>
+  <p>Wheat, ragi, horsegram and green gram microgreens are available at this contact number.</p>
+  <a href="tel:+919566760208">9566760208</a>
+</section>
+<footer>Thulir Greens. Quantities are approximate. Taste and adjust salt, spice and sourness to suit your family.</footer>
+</div>
+
+<script>
+var G=[
+{id:"wheat",name:"Wheat",c:"var(--wheat)",tag:"Wheat microgreens",
+ about:"Grassy, mildly sweet blades with a fresh green aroma. Best chopped fine or blended.",
+ facts:["Harvest: day 7 to 10","Height: 10 to 15 cm","Taste: sweet, grassy"],
+ r:[
+ {t:"Wheat microgreen paratha",m:"25 min · Serves 3",d:"Soft whole-wheat flatbread with finely chopped greens kneaded into the dough.",
+  i:["2 cups whole-wheat flour","1 cup wheat microgreens, finely chopped","1 green chilli, minced","½ tsp ajwain","Salt and 1 tsp oil for the dough","Ghee for roasting"],
+  s:["Mix flour, greens, chilli, ajwain and salt. Add water slowly and knead to a soft dough.","Rest for 10 minutes, then roll into discs.","Roast on a hot tawa with a little ghee until golden spots appear on both sides.","Serve with curd or pickle."],
+  tip:"Squeeze the chopped greens lightly so the dough does not turn sticky."},
+ {t:"Wheat green and mint chutney",m:"10 min · Serves 4",d:"A bright, fresh chutney for idli, dosa or sandwiches.",
+  i:["1 cup wheat microgreens","½ cup mint leaves","¼ cup grated coconut","1 green chilli","1 tsp roasted gram","Salt and lemon juice to taste"],
+  s:["Grind everything with a few spoons of water to a smooth paste.","Add lemon juice and salt.","Temper with mustard and curry leaves if you like."],
+  tip:"Make it fresh. It keeps its colour for about one day in the fridge."}]},
+{id:"ragi",name:"Ragi",c:"var(--ragi)",tag:"Ragi microgreens",
+ about:"Fine, tender shoots with a light nutty flavour. Gentle enough for children.",
+ facts:["Harvest: day 7 to 9","Height: 8 to 12 cm","Taste: mild, nutty"],
+ r:[
+ {t:"Ragi dosa with microgreens",m:"20 min · Serves 3",d:"Crisp, earthy dosa topped with a handful of fresh greens.",
+  i:["1 cup ragi flour","½ cup rice flour","¼ cup curd","1 onion, chopped","½ cup ragi microgreens","Salt, cumin, curry leaves"],
+  s:["Whisk the flours, curd, salt and water into a thin batter. Rest 10 minutes.","Stir in onion, cumin and curry leaves.","Pour onto a hot tawa in a spiral, add a little oil around the edges.","Scatter microgreens on top while still wet and cook until crisp."],
+  tip:"Press the greens in gently with a spatula so they stay on when you fold."},
+ {t:"Ragi microgreen vegetable upma",m:"20 min · Serves 2",d:"Ragi rava upma finished with raw greens for freshness.",
+  i:["1 cup ragi rava","1 carrot and 1 small onion, diced","½ tsp mustard, 1 tsp urad dal","Curry leaves, green chilli, ginger","2½ cups water","½ cup ragi microgreens"],
+  s:["Temper mustard, urad dal, curry leaves, chilli and ginger in oil.","Saute onion and carrot for 3 minutes.","Add water and salt. When boiling, stir in the rava slowly to avoid lumps.","Cover and cook on low for 5 minutes. Turn off the heat, then fold in the microgreens."],
+  tip:"Add the greens off the heat. They wilt just enough from the steam."}]},
+{id:"horse",name:"Horsegram",c:"var(--horse)",tag:"Horsegram (kollu) microgreens",
+ about:"Earthy, slightly peppery shoots, strong in flavour and well suited to hot, spicy food.",
+ facts:["Harvest: day 5 to 7","Height: 5 to 8 cm","Taste: earthy, bold"],
+ r:[
+ {t:"Kollu microgreen rasam",m:"20 min · Serves 3",d:"A warming, peppery rasam finished with fresh horsegram shoots.",
+  i:["1 tomato, crushed","1 tsp pepper and 1 tsp cumin, coarsely ground","3 garlic cloves, crushed","Small lime-size tamarind, soaked","1 tsp rasam powder","½ cup horsegram microgreens","Coriander, curry leaves, ghee, mustard"],
+  s:["Boil tamarind water with tomato, rasam powder, salt and turmeric for 8 minutes.","Add the pepper, cumin and garlic and simmer 2 minutes.","Temper mustard and curry leaves in ghee and pour in.","Turn off the heat, stir in the microgreens and coriander, and cover for 1 minute."],
+  tip:"Drinks well on its own as a soup, or with hot rice."},
+ {t:"Kollu microgreen poriyal",m:"12 min · Serves 2",d:"A quick dry stir-fry with coconut, good with rice and curd.",
+  i:["2 cups horsegram microgreens","1 small onion, chopped","2 dried red chillies","1 tsp mustard, 1 tsp urad dal","3 tbsp grated coconut","Salt, curry leaves, 1 tsp oil"],
+  s:["Heat oil and temper mustard, urad dal, chillies and curry leaves.","Saute the onion until soft.","Add the microgreens and salt and toss for 1 minute only.","Mix in the coconut and serve right away."],
+  tip:"Keep the flame high and the time short so the greens stay green."}]},
+{id:"green",name:"Green gram",c:"var(--green)",tag:"Green gram (pasi payir) microgreens",
+ about:"Crunchy, juicy stems with a clean, sweet bean flavour. The most versatile of the four, and good raw.",
+ facts:["Harvest: day 5 to 7","Height: 6 to 10 cm","Taste: sweet, crisp"],
+ r:[
+ {t:"Green gram microgreen salad",m:"10 min · Serves 2",d:"A raw, crunchy salad that works as a light lunch or side.",
+  i:["2 cups green gram microgreens","1 cucumber and 1 tomato, diced","½ onion, thinly sliced","1 tbsp roasted peanuts","1 tsp lemon juice, pinch of salt, pepper","Chaat masala, optional"],
+  s:["Put the vegetables and microgreens in a bowl.","Add lemon juice, salt and pepper and toss gently.","Top with peanuts and serve immediately."],
+  tip:"Dress just before eating. The salt draws water and softens the shoots."},
+ {t:"Pesarattu with microgreens",m:"25 min + soaking · Serves 3",d:"Andhra-style green gram dosa, with greens pressed into the batter.",
+  i:["1 cup whole green gram, soaked 6 hours","1 green chilli, 1 inch ginger","1 tsp cumin","Salt","½ cup green gram microgreens","1 onion, chopped, for topping"],
+  s:["Grind the soaked gram with chilli, ginger, cumin and salt to a pourable batter.","Spread a ladle on a hot tawa into a thin round.","Top with onion and microgreens and drizzle oil around the edge.","Cook until crisp and golden, then fold and serve with ginger chutney."],
+  tip:"No fermentation needed, so you can make it the same day."}]},
+{id:"drinks",name:"Drinks",c:"var(--accent)",tag:"Smoothies and wheat juices",
+ about:"Blended drinks are the easiest way to start with microgreens. Fruit and spices soften the grassy taste.",
+ facts:["Serve: fresh, right after blending","Start with: a small glass","Best greens: wheat, green gram, ragi"],
+ r:[
+ {t:"Classic wheat microgreen juice",m:"10 min · Serves 1",d:"A small, strong shot of fresh wheat juice with ginger and lemon.",
+  i:["1 big handful (about 50 g) wheat microgreens","½ cup cold water","1 small piece ginger","½ tsp lemon juice","Pinch of rock salt, optional"],
+  s:["Rinse the greens well and chop roughly.","Blend with water and ginger for 1 minute.","Strain through a fine sieve, pressing out all the juice.","Add lemon juice and drink straight away."],
+  tip:"Begin with about 30 ml and increase slowly. Some people feel queasy at first. Drink within 15 minutes of making it."},
+ {t:"Wheat green and apple cooler",m:"10 min · Serves 2",d:"A sweeter, milder juice that children usually accept.",
+  i:["½ cup wheat microgreens","1 green apple, chopped","1 cucumber, chopped","6 mint leaves","1 tsp lemon juice","Ice cubes"],
+  s:["Blend the wheat greens, apple, cucumber, mint and ½ cup water until smooth.","Strain if you prefer a clear juice.","Stir in lemon juice and pour over ice."],
+  tip:"Use a sweet apple if you want it milder, and skip straining to keep the fibre."},
+ {t:"Green gram microgreen banana smoothie",m:"5 min · Serves 2",d:"A creamy, filling smoothie where the greens hardly show in the taste.",
+  i:["1 cup green gram microgreens","2 ripe bananas","1½ cups chilled milk or thin coconut milk","2 dates, seeds removed","¼ tsp cardamom powder"],
+  s:["Put everything in a blender.","Blend for 1 minute until completely smooth.","Pour into glasses and drink fresh."],
+  tip:"Freeze the bananas first for a thick, cold smoothie with no ice."},
+ {t:"Ragi microgreen and banana smoothie",m:"8 min · Serves 2",d:"A cooling, filling breakfast drink with ragi shoots and a little cooked ragi.",
+  i:["½ cup ragi microgreens","1 tbsp ragi flour, cooked in ½ cup water and cooled","1 banana","1 cup milk","1 tbsp jaggery powder","Pinch of dry ginger powder"],
+  s:["Cook the ragi flour in water for 3 minutes, stirring, then let it cool completely.","Blend the cooked ragi with microgreens, banana, milk, jaggery and ginger.","Serve chilled."],
+  tip:"Cooking the ragi flour first removes the raw taste."}]}
+];
+var nav=document.getElementById("nav"),main=document.getElementById("main"),tray=document.getElementById("tray");
+var cols=["#7d8f12","#8e3b3b","#82552d","#27965a","#7d8f12","#27965a","#82552d","#8e3b3b","#27965a"];
+cols.forEach(function(c,i){var s=document.createElement("span");s.className="sprout";s.style.background=c;s.style.height=(30+((i*17)%34))+"px";s.style.animationDelay=(i*80)+"ms";tray.appendChild(s)});
+function el(t,cls,txt){var e=document.createElement(t);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e}
+function li(list){return list.map(function(x){return "<li>"+x+"</li>"}).join("")}
+var btns={};
+function btn(id,label){var b=el("button",null,label);b.setAttribute("aria-pressed","false");b.onclick=function(){show(id)};nav.appendChild(b);btns[id]=b}
+btn("all","All recipes");G.forEach(function(g){btn(g.id,g.name)});
+G.forEach(function(g){
+  var sec=el("section");sec.id="s-"+g.id;sec.style.setProperty("--c",g.c);
+  var p=el("div","profile on");
+  p.appendChild(el("h2",null,g.tag));p.appendChild(el("div",null,g.about));
+  var f=el("ul","facts");f.innerHTML=g.facts.map(function(x){var a=x.split(": ");return "<li><b>"+a[0]+":</b> "+a[1]+"</li>"}).join("");p.appendChild(f);
+  sec.appendChild(p);
+  var gr=el("div","grid");
+  g.r.forEach(function(r){
+    var c=el("article","card");
+    c.appendChild(el("h3",null,r.t));c.appendChild(el("p","meta",r.m));c.appendChild(el("p",null,r.d));
+    var d=el("details");
+    d.innerHTML="<summary>Ingredients and method</summary><strong>Ingredients</strong><ul>"+li(r.i)+"</ul><strong>Method</strong><ol>"+li(r.s)+"</ol><div class=\"tip\"><strong>Tip:</strong> "+r.tip+"</div>";
+    c.appendChild(d);gr.appendChild(c);
+  });
+  sec.appendChild(gr);main.appendChild(sec);
+});
+function show(id){
+  G.forEach(function(g){document.getElementById("s-"+g.id).hidden=!(id==="all"||id===g.id)});
+  Object.keys(btns).forEach(function(k){btns[k].setAttribute("aria-pressed",k===id?"true":"false")});
+  try{history.replaceState(null,"","#"+id)}catch(e){}
+}
+var h=(location.hash||"").slice(1);
+show(h==="all"||G.some(function(g){return g.id===h})?h:"all");
+</script>
+</body>
+</html>
